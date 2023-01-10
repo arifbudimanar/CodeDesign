@@ -11,11 +11,11 @@
 </head>
 
 <body class="text-gray-800 bg-gray-50">
-    <div class="max-w-6xl min-h-screen mx-auto" x-data="{ showDropdown: false }">
+    <div class="min-h-screen mx-auto max-w-7xl" x-data="{ showDropdown: false }">
         <!-- Navbar -->
-        <div class="flex items-center justify-between px-5 py-5">
+        <div class="relative flex items-center justify-between px-5 py-5 ">
             <!-- Logo & Menu -->
-            <div class="flex py-2">
+            <div class="flex py-2 ">
                 <!-- Logo -->
                 <div class="flex items-center mr-10">
                     <img src="/holadok/assets/logo.png" alt="logo" class="w-5 h-5 mr-2">
@@ -25,16 +25,16 @@
                 </div>
                 <!-- Menu -->
                 <div class="items-center hidden gap-8 md:flex">
-                    <a href="#" class="font-semibold">Home</a>
-                    <a href="#" class="font-semibold">Features</a>
-                    <a href="#" class="font-semibold">Blog</a>
-                    <a href="#" class="font-semibold">About Us</a>
+                    <a href="#" class="font-semibold text-gray-400 hover:text-gray-900">Home</a>
+                    <a href="#" class="font-semibold text-gray-400 hover:text-gray-900">Features</a>
+                    <a href="#" class="font-semibold text-gray-400 hover:text-gray-900">Blog</a>
+                    <a href="#" class="font-semibold text-gray-400 hover:text-gray-900">About Us</a>
                 </div>
             </div>
             <!-- Login & Book Now -->
             <div class="items-center hidden gap-10 md:flex">
-                <a href="#" class="px-5 py-2 font-semibold">Login</a>
-                <a href="#" class="px-5 py-2 font-semibold ring-2 ring-black hover:bg-cyan-500 hover:text-white">Book
+                <a href="#" class="px-5 py-2 font-semibold uppercase">Login</a>
+                <a href="#" class="px-5 py-2 font-semibold ring-2 ring-black hover:bg-cyan-800 hover:text-white">Book
                     Now</a>
             </div>
             <!-- Menu Mobile -->
@@ -47,7 +47,7 @@
                 <span class="hidden">Button</span>
             </button>
         </div>
-        <div class="px-5 pb-5 bg-gray-50 md:hidden" x-cloak x-show="!showDropdown">
+        <div class="px-5 pb-5 bg-gray-50 md:hidden" x-cloak x-show="showDropdown">
             <div class="flex flex-col space-y-2">
                 <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Home</a>
                 <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Features</a>
@@ -56,18 +56,88 @@
             </div>
             <div class="flex flex-col mt-8 space-y-2">
                 <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Login</a>
-                <a href="#" class="items-center px-4 py-2 font-bold border-2 border-black hover:bg-cyan-500 hover:text-white">Book Now</a>
+                <a href="#"
+                    class="items-center px-4 py-2 font-bold border-2 border-black hover:bg-cyan-900 hover:text-white">Book
+                    Now</a>
             </div>
         </div>
 
-        <!-- Hero -->
-        <div class="flex min-h-screen p-5 bg-gray-200">
-            Hero
+        <!-- Hero & Feature -->
+        <div class="p-5">
+            <!-- Hero -->
+            <div class="relative flex w-full h-96 md:h-screen">
+                <div class="flex w-full h-full md:max-w-lg sm:max-w-4xl">
+                    <div class="flex flex-col h-full md:justify-center">
+                        <h1 class="mb-5 text-3xl font-bold tracking-wider">Get the healthcare you need, when you need
+                            it.</h1>
+                        <p class="text-lg">Manage all of your healthcare needs in one convenient place – from booking
+                            appointments to tracking your health history.</p>
+                        <div class="mt-10">
+                            <a href="#"
+                                class="items-center px-4 py-2 mt-10 font-bold text-gray-100 bg-cyan-900 hover:bg-cyan-800 hover:text-white">Book
+                                an Appointment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden -skew-x-12 left-20 md:block w-96 bg-cyan-200"></div>
+                <img src="/holadok/assets/image 1.png" alt="hero"
+                    class="hidden object-contain w-full h-full md:block md:absolute -right-20 top-32 md:-right-60">
+            </div>
+
+            <!-- Feature -->
+            <div class="relative z-10 p-5 text-gray-300 bg-cyan-900">
+                <div class="grid grid-cols-1 lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="flex p-4">
+                        <div class="flex justify-center w-20 mt-1 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold ">Online appointment scheduling</h3>
+                            <p class="text-lg text-gray-400">Allows users to schedule appointments with their healthcare
+                                provider through the app.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex p-4">
+                        <div class="flex justify-center w-20 mt-1 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                            </svg>
+
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold ">Medication reminders</h3>
+                            <p class="text-lg text-gray-400">Allows users to schedule appointments with their healthcare
+                                provider through the app.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex p-4">
+                        <div class="flex justify-center w-20 mt-1 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                            </svg>
+
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold ">Virtual consultations</h3>
+                            <p class="text-lg text-gray-400">Allows users to schedule appointments with their healthcare
+                                provider through the app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Feature -->
-        <div class="p-5 bg-gray-300">
-            Feature
-        </div>
+
     </div>
 </body>
 
