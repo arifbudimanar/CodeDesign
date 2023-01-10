@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Nowted</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            background-color: #3f3f46;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #52525b;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #71717a;
+        }
+    </style>
+</head>
+
+<body class="max-w-full mx-auto text-gray-200">
+    <div class="flex w-full h-screen mx-auto bg-zinc-800">
+        <!-- Shortcut -->
+        <div class="w-10 py-5 bg-zinc-800 lg:hidden">
+            <!-- lg:hidden -->
+            <div class="flex items-center justify-center h-10 text-lg font-bold bg-zinc-700">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+        </div>
+        <!-- Side A -->
+        <div class="hidden w-1/5 h-screen py-5 overflow-y-auto lg:block bg-zinc-800">
+            <div class="px-5">
+                <div class="flex items-center h-10 text-lg font-bold bg-zinc-800">Nowted</div>
+                <!-- <div class="flex justify-center">
+                    <a href="#"
+                        class="flex items-center justify-center w-full py-1 my-5 font-semibold rounded-md bg-zinc-700 hover:bg-zinc-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="flex w-5 h-5 mr-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        New Note
+                    </a>
+                </div> -->
+            </div>
+            <div class="flex flex-col gap-10 mt-5">
+                <div>
+                    <div class="mb-2 ml-5 text-sm font-medium text-gray-400">Recents</div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                </svg>
+                            </div>
+                            Reflection on the Month of June
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                </svg>
+                            </div>
+                            Project Proposal
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                </svg>
+                            </div>
+                            Travel itinerary
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2 ml-5 text-sm font-medium text-gray-400">
+                        <div>
+                            Folder
+                        </div>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                            </svg>
+                            <span class="hidden">New Folder</span>
+                        </button>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 bg-zinc-700 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+                                </svg>
+                            </div>
+                            Personal
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                </svg>
+                            </div>
+                            Work
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                </svg>
+                            </div>
+                            Travel
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                </svg>
+                            </div>
+                            Event
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                </svg>
+                            </div>
+                            Finances
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-2 ml-5 text-sm font-medium text-gray-400">More</div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            Favorite
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                            </div>
+                            Trash
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                </svg>
+                            </div>
+                            Archived Notes
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-2 ml-5 text-sm font-medium text-gray-400">More</div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            Favorite
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                            </div>
+                            Trash
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                </svg>
+                            </div>
+                            Archived Notes
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-2 ml-5 text-sm font-medium text-gray-400">More</div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            Favorite
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                            </div>
+                            Trash
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                </svg>
+                            </div>
+                            Archived Notes
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-2 ml-5 text-sm font-medium text-gray-400">More</div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            Favorite
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                            </div>
+                            Trash
+                        </div>
+                        <div class="flex items-center px-5 py-2 hover:bg-blue-500">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                </svg>
+                            </div>
+                            Archived Notes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Side B -->
+        <div class="flex flex-col w-full px-5 py-5 overflow-y-auto md:w-2/5 lg:w-1/5 bg-zinc-700">
+            <!-- flex items-center justify-center h-10 text-lg font-bold bg-zinc-700 -->
+            <div class="flex items-center h-10 py-5 mb-5 text-lg font-bold bg-zinc-700">Personal</div>
+            <div class="flex justify-center">
+                <a href="#"
+                    class="flex items-center justify-center w-full py-1 mb-5 font-semibold rounded-md bg-zinc-800 hover:bg-zinc-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="flex w-5 h-5 mr-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    New Note
+                </a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">My Goals for the Next Year</p>
+                    <div class="flex text-gray-400">
+                        <p>31/12/2022</p>
+                        <p class="ml-2 md:hidden">As the year comes to a ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-500">
+                    <p class="mb-2 font-bold">Reflection on the Month of June</p>
+                    <div class="flex text-gray-400">
+                        <p>21/06/2022</p>
+                        <p class="ml-2 md:hidden">It's hard to believe that ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">My Favorite Memories from Childhood</p>
+                    <div class="flex text-gray-400">
+                        <p>11/04/2022</p>
+                        <p class="ml-2 md:hidden">I was reminiscing about ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">Reflections on My First Year of College</p>
+                    <div class="flex text-gray-400">
+                        <p>08/04/2022</p>
+                        <p class="ml-2 md:hidden">It's hard to believe that ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">My Experience with Meditation</p>
+                    <div class="flex text-gray-400">
+                        <p>24/03/2022</p>
+                        <p class="ml-2 md:hidden">I've been trying to ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">Thoughts on the Pandemic</p>
+                    <div class="flex text-gray-400">
+                        <p>01/02/2021</p>
+                        <p class="ml-2 md:hidden">It's hard to believe that ...</p>
+                    </div>
+                </div>
+                <div class="px-3 py-5 rounded-md bg-zinc-600">
+                    <p class="mb-2 font-bold">My Favorite Recipes</p>
+                    <div class="flex text-gray-400">
+                        <p>08/01/2021</p>
+                        <p class="ml-2 md:hidden">I love cooking and trying ...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main -->
+        <div class="hidden w-3/5 px-10 py-5 overflow-y-auto md:block">
+            <!-- Title & More -->
+            <div class="flex items-center justify-between h-10 text-lg font-bold">
+                <div>Reflection on the Month of June</div>
+                <div class="text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+            </div>
+            <!-- Form -->
+            <div class="py-5 space-y-5 text-gray-400">
+                <!-- Date -->
+                <div class="flex w-full">
+                    <div class="flex items-center w-1/3">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                            </svg>
+                        </div>
+                        Date
+                    </div>
+                    <div class="w-2/3 text-gray-300">21/06/2022</div>
+                </div>
+                <!-- Folder -->
+                <div class="flex w-full">
+                    <div class="flex items-center w-1/3">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                            </svg>
+                        </div>
+                        Folder
+                    </div>
+                    <div class="w-2/3 text-gray-300">Personal</div>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="space-y-4 text-gray-300">
+                <p> It's hard to believe that June is already over! Looking back on the month, there were a few
+                    highlights
+                    that stand out to me.</p>
+
+                <p> One of the best things that happened was getting promoted at work. I've been working really hard and
+                    it's great to see that effort recognized. It's also exciting to have more responsibility and the
+                    opportunity to contribute to the company in a bigger way. I'm looking forward to taking on new
+                    challenges and learning as much as I can in my new role.</p>
+
+                <p> I also had a great time on my vacation to Hawaii. The beaches were beautiful and I loved trying all
+                    of
+                    the different types of Hawaiian food. It was nice to relax and get away from the daily grind for a
+                    bit.
+                    I'm so grateful to have had the opportunity to take a trip like that.</p>
+
+                <p> On the downside, I feel like I didn't make as much progress on my fitness goals as I would have
+                    liked. I
+                    was really busy with work and didn't make it to the gym as often as I planned. I'm going to try to
+                    be
+                    more consistent in July and make exercise a higher priority. I know it will be good for my physical
+                    and
+                    mental health.</p>
+
+                <p> I also had a few rough patches in my relationships this month. I had a couple of misunderstandings
+                    with
+                    friends and it was hard to navigate those conflicts. But I'm glad we were able to talk things
+                    through
+                    and move past them. I value my relationships and I want to make sure I'm always working to be a good
+                    friend.</p>
+
+                <p> Overall, it was a good month with a mix of ups and downs. I'm looking forward to what July has in
+                    store!
+                    I'm hoping to make some more progress on my goals and spend quality time with the people I care
+                    about.</p>
+                <p> One of the best things that happened was getting promoted at work. I've been working really hard and
+                    it's great to see that effort recognized. It's also exciting to have more responsibility and the
+                    opportunity to contribute to the company in a bigger way. I'm looking forward to taking on new
+                    challenges and learning as much as I can in my new role.</p>
+
+                <p> I also had a great time on my vacation to Hawaii. The beaches were beautiful and I loved trying all
+                    of
+                    the different types of Hawaiian food. It was nice to relax and get away from the daily grind for a
+                    bit.
+                    I'm so grateful to have had the opportunity to take a trip like that.</p>
+
+                <p> On the downside, I feel like I didn't make as much progress on my fitness goals as I would have
+                    liked. I
+                    was really busy with work and didn't make it to the gym as often as I planned. I'm going to try to
+                    be
+                    more consistent in July and make exercise a higher priority. I know it will be good for my physical
+                    and
+                    mental health.</p>
+
+                <p> I also had a few rough patches in my relationships this month. I had a couple of misunderstandings
+                    with
+                    friends and it was hard to navigate those conflicts. But I'm glad we were able to talk things
+                    through
+                    and move past them. I value my relationships and I want to make sure I'm always working to be a good
+                    friend.</p>
+
+                <p> Overall, it was a good month with a mix of ups and downs. I'm looking forward to what July has in
+                    store!
+                    I'm hoping to make some more progress on my goals and spend quality time with the people I care
+                    about.</p>
+                <p> One of the best things that happened was getting promoted at work. I've been working really hard and
+                    it's great to see that effort recognized. It's also exciting to have more responsibility and the
+                    opportunity to contribute to the company in a bigger way. I'm looking forward to taking on new
+                    challenges and learning as much as I can in my new role.</p>
+
+                <p> I also had a great time on my vacation to Hawaii. The beaches were beautiful and I loved trying all
+                    of
+                    the different types of Hawaiian food. It was nice to relax and get away from the daily grind for a
+                    bit.
+                    I'm so grateful to have had the opportunity to take a trip like that.</p>
+
+                <p> On the downside, I feel like I didn't make as much progress on my fitness goals as I would have
+                    liked. I
+                    was really busy with work and didn't make it to the gym as often as I planned. I'm going to try to
+                    be
+                    more consistent in July and make exercise a higher priority. I know it will be good for my physical
+                    and
+                    mental health.</p>
+
+                <p> I also had a few rough patches in my relationships this month. I had a couple of misunderstandings
+                    with
+                    friends and it was hard to navigate those conflicts. But I'm glad we were able to talk things
+                    through
+                    and move past them. I value my relationships and I want to make sure I'm always working to be a good
+                    friend.</p>
+
+                <p> Overall, it was a good month with a mix of ups and downs. I'm looking forward to what July has in
+                    store!
+                    I'm hoping to make some more progress on my goals and spend quality time with the people I care
+                    about.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
