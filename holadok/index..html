@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Holadok</title>
+</head>
+
+<body class="text-gray-800 bg-gray-50">
+    <div class="max-w-6xl min-h-screen mx-auto" x-data="{ showDropdown: false }">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-5 py-5">
+            <!-- Logo & Menu -->
+            <div class="flex py-2">
+                <!-- Logo -->
+                <div class="flex items-center mr-10">
+                    <img src="/holadok/assets/logo.png" alt="logo" class="w-5 h-5 mr-2">
+                    <p class="font-bold">
+                        Holadok
+                    </p>
+                </div>
+                <!-- Menu -->
+                <div class="items-center hidden gap-8 md:flex">
+                    <a href="#" class="font-semibold">Home</a>
+                    <a href="#" class="font-semibold">Features</a>
+                    <a href="#" class="font-semibold">Blog</a>
+                    <a href="#" class="font-semibold">About Us</a>
+                </div>
+            </div>
+            <!-- Login & Book Now -->
+            <div class="items-center hidden gap-10 md:flex">
+                <a href="#" class="px-5 py-2 font-semibold">Login</a>
+                <a href="#" class="px-5 py-2 font-semibold ring-2 ring-black hover:bg-cyan-500 hover:text-white">Book
+                    Now</a>
+            </div>
+            <!-- Menu Mobile -->
+            <button x-on:click="showDropdown = !showDropdown" class="items-center block py-2 md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <span class="hidden">Button</span>
+            </button>
+        </div>
+        <div class="px-5 pb-5 bg-gray-50 md:hidden" x-cloak x-show="!showDropdown">
+            <div class="flex flex-col space-y-2">
+                <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Home</a>
+                <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Features</a>
+                <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Blog</a>
+                <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">About Us</a>
+            </div>
+            <div class="flex flex-col mt-8 space-y-2">
+                <a href="#" class="py-2 pl-5 font-semibold bg-gray-100 hover:bg-gray-200">Login</a>
+                <a href="#" class="items-center px-4 py-2 font-bold border-2 border-black hover:bg-cyan-500 hover:text-white">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="flex min-h-screen p-5 bg-gray-200">
+            Hero
+        </div>
+        <!-- Feature -->
+        <div class="p-5 bg-gray-300">
+            Feature
+        </div>
+    </div>
+</body>
+
+</html>
