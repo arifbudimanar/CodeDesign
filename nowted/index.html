@@ -8,11 +8,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Nowted</title>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            background-color: #3f3f46;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #52525b;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #71717a;
+        }
+    </style>
 </head>
 
-<body class="max-w-5xl min-h-screen mx-auto text-zinc-300 bg-zinc-900">
+<body class="relative min-h-screen overflow-x-hidden text-zinc-300 bg-zinc-900">
+    <img src="/nowted/assets/ellipse.png" class="absolute top-0 -translate-y-1/2 -z-10" alt="ellipse">
     <!-- Navbar -->
-    <div x-data="{ showDropdown: false }">
+    <div x-cloak x-data="{ showDropdown: false }" class="max-w-5xl mx-auto">
         <nav class="flex items-center justify-between px-5 py-10">
             <!-- Hamburger Button -->
             <div class="block sm:hidden">
@@ -53,7 +74,7 @@
         </div>
     </div>
     <!-- Hero -->
-    <div class="flex flex-col items-center gap-8 px-5 py-20">
+    <div class="flex flex-col items-center max-w-5xl gap-8 px-5 py-20 mx-auto">
         <h1 class="text-4xl font-light text-center sm:px-10 md:px-32">Boost your productivity with our <span
                 class="font-semibold">streamlined note-taking</span> solution</h1>
         <p class="text-center sm:px-28">Effortlessly access your notes from any device with our convenient
@@ -68,15 +89,16 @@
         </a>
     </div>
     <!-- Image -->
-    <div class="p-5">
-        <div class="px-5 py-5 rounded-xl bg-zinc-600/60">
-            <div class="relative flex items-center justify-center mb-3">
+    <div class="relative max-w-5xl p-5 mx-auto">
+        <img src="/nowted/assets/ellipse.png" class="absolute -translate-y-1/2 top-36 -z-10" alt="ellipse">
+        <div class="px-5 pt-3 pb-5 rounded-xl bg-zinc-100/10">
+            <div class="relative flex items-center justify-center">
                 <div class="absolute left-0 flex h-1 gap-1">
-                    <div class="p-1 bg-red-400 rounded-full"></div>
-                    <div class="p-1 bg-yellow-400 rounded-full"></div>
-                    <div class="p-1 bg-green-400 rounded-full"></div>
+                    <div class="p-1.5 bg-red-400 rounded-full"></div>
+                    <div class="p-1.5 bg-yellow-400 rounded-full"></div>
+                    <div class="p-1.5 bg-green-400 rounded-full"></div>
                 </div>
-                <div class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-zinc-500">
+                <div class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-zinc-100/10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -88,15 +110,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                     </svg>
-
                 </div>
             </div>
-            <img src="/nowted/assets/image 1.png" alt="" class="rounded-xl">
+            <img src="/nowted/assets/image 1.png" alt="" class="mt-3 rounded-xl">
         </div>
     </div>
-
-
-
 </body>
 
 </html>
